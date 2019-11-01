@@ -1,4 +1,4 @@
-<form [formGroup]="postForm" (ngSubmit)="onSubmit()" ]>
+<form [formGroup]="postForm" (ngSubmit)="onSubmit()">
   <div>
     <label>
       Title
@@ -6,18 +6,18 @@
       <input type="text" formControlName="title">
     </label>
   </div>
-  <div *ngIf="postForm.get('title').valid && postForm.get('title').touched" style="color: red">
-    Tittle is required and min length is 10
+  <div *ngIf="postForm.get('title').invalid && postForm.get('title').touched" style="color: red">
+    Title is required and min length is 10
   </div>
   <div>
     <label>
-      Body
+      body
       <br>
       <textarea formControlName="body" cols="30" rows="10"></textarea>
     </label>
   </div>
-  <div *ngIf="postForm.get('body').valid && postForm.get('body').touched" style="color: red">
-    Body is required and min lenght is 10
+  <div *ngIf="postForm.get('body').invalid && postForm.get('body').touched" style="color: red">
+    Body is required and min length is 10
   </div>
   <button type="submit">Submit</button>
 </form>

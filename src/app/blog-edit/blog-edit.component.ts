@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {IPost} from '../post.interface';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ActivatedRoute, Route} from '@angular/router';
+import {ActivatedRoute, Route, Router} from '@angular/router';
 import {PostService} from '../post.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class BlogEditComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Route,
+    private router: Router,
     private postService: PostService,
     private fb: FormBuilder
   ) {
@@ -49,7 +49,7 @@ export class BlogEditComponent implements OnInit {
         next => {
           this.router.navigate(['/blog']);
         },
-        error => console.log()
+        error => console.log(error)
       );
     }
   }

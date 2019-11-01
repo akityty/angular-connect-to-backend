@@ -20,10 +20,11 @@ export class BlogComponent implements OnInit {
 
   ngOnInit() {
     this.postForm = this.fb.group({
-      tittle: ['', [Validators.required, Validators.minLength(10)]],
+      title: ['', [Validators.required, Validators.minLength(10)]],
       body: ['', [Validators.required, Validators.minLength(10)]]
     });
     this.postService.getPosts().subscribe(next => (this.postList = next), error => (this.postList = []));
+    console.log(this.postList);
   }
 
   onSubmit() {
@@ -32,7 +33,7 @@ export class BlogComponent implements OnInit {
       this.postService.createPost(value).subscribe(next => {
         this.postList.unshift(next);
         this.postForm.reset({
-          tile: '',
+          title: '',
           body: ''
         });
       }, error => console.log(error));

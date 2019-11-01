@@ -6,11 +6,17 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import { TodoComponent } from './todo/todo.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { BlogComponent } from './blog/blog.component';
+import { BlogEditComponent } from './blog-edit/blog-edit.component';
+import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoComponent
+    TodoComponent,
+    BlogComponent,
+    BlogEditComponent,
+    BlogDetailComponent
   ],
   imports: [
     BrowserModule,

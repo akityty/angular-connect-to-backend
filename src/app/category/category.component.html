@@ -1,0 +1,10 @@
+<ul>
+  <li *ngFor="let category of categoryList; index as i">
+    <h3>
+      <a [routerLink]="['/category', category.id]">
+        Post Id: {{category.id}} - {{category.name}}
+      </a>
+    </h3>
+    <a [routerLink]="['/category', category.id, 'edit']">Edit</a>
+  </li>
+</ul>

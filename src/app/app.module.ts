@@ -9,6 +9,8 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { BlogComponent } from './blog/blog.component';
 import { BlogEditComponent } from './blog-edit/blog-edit.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
+import {CategoryComponent} from './category/category.component';
+import {CategoryService} from './category.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { BlogDetailComponent } from './blog-detail/blog-detail.component';
     TodoComponent,
     BlogComponent,
     BlogEditComponent,
-    BlogDetailComponent
+    BlogDetailComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,

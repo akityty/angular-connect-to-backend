@@ -3,6 +3,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {BlogComponent} from './blog/blog.component';
 import {BlogDetailComponent} from './blog-detail/blog-detail.component';
 import {BlogEditComponent} from './blog-edit/blog-edit.component';
+import {CategoryComponent} from './category/category.component';
 
 
 const routes: Routes = [{
@@ -14,7 +15,11 @@ const routes: Routes = [{
 }, {
   path: 'blog/:id/edit',
   component: BlogEditComponent
-}];
+}, {
+  path: 'category',
+  component: CategoryComponent
+}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

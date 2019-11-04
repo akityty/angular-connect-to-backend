@@ -24,7 +24,6 @@ export class BlogComponent implements OnInit {
       body: ['', [Validators.required, Validators.minLength(10)]]
     });
     this.postService.getPosts().subscribe(next => (this.postList = next), error => (this.postList = []));
-    console.log(this.postList);
   }
 
   onSubmit() {

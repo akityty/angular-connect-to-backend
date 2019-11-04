@@ -1,5 +1,5 @@
 <h2>Simple Blog</h2>
-<form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+<!--<form [formGroup]="postForm" (ngSubmit)="onSubmit()">
   <div>
     <label>
       Tittle
@@ -21,18 +21,28 @@
     Body is required and min length is 10
   </div>
   <button type="submit">Submit</button>
-</form>
-
+</form>-->
 
 <ul>
-  <li *ngFor="let post of postList; index as i">
+  <li *ngFor="let blog of blogList; index as i">
     <h3>
-      <a [routerLink]="['/blog', post.id]">
-        Post Id: {{post.id}} - {{post.title}}
+      <a [routerLink]="['/blog', blog.id]">
+        Blog Info:
+        <br>
+        - Id: {{blog.id}}
+        <br>
+        - CreateDate: {{blog.createDate.year}}, {{blog.createDate.month}}, {{blog.createDate.dayOfMonth}}, {{blog.createDate.dayOfWeek}}
+        <br>
+        - Title: {{blog.title}}
+        <br>:
+        - Category: {{blog.category.name}}
+        <br>:
+        - Content: {{blog.content}}
+        <br>:
+        - Image: {{blog.image}}
+        <br>
       </a>
     </h3>
-    <a [routerLink]="['/blog', post.id, 'edit']">Edit</a>
-
-    <button (click)="deletePost(i)">Delete</button>
+    <a [routerLink]="['/blog', blog.id, 'edit']">Edit</a>
   </li>
 </ul>
